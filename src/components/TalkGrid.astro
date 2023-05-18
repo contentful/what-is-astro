@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import TalkCard from "../components/TalkCard.astro";
+
+let talks = await getCollection("talk");
+---
+
+<ul role="list" class="link-card-grid">
+  {
+    talks.map(({ data }) => {
+      return (
+        <TalkCard
+          title={data.title}
+          date={data.date}
+          description={data.description}
+        />
+      );
+    })
+  }
+</ul>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
