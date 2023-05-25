@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export const prerender = false;
+
+let res = await fetch(
+  "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400"
+);
+
+let { results } = await res.json();
+let { sunrise, sunset } = results;
+
+let name = "Starry Skies Outdoor Theater";
+let location = "123 Park Ave, CityTown";
+let capacity = 100;
+let facilities = [
+  "Close to public transports",
+  "Wheelchair accessible",
+  "Public toilets",
+  "Free Wifi",
+];
+---
+
+<Layout title="Venue | Fake Astro Conf">
+  <section>
+    <h2>Venue</h2>
+
+    <p>This year, our conference takes place at the magnificent {name}</p>
+    <p>Luckily for us, it's summer, the days are super long!</p>
+    <p>The sun rises at <b>{sunrise}</b> and sets at <b>{sunset}</b></p>
+  </section>
+  <hr />
+
+  <div class="theater">
+    <h2>{name}</h2>
+    <p>{location}</p>
+    <p>Capacity: {capacity}</p>
+
+    <div class="details">
+      <h3>Facilities</h3>
+      <ul>
+        {facilities.map((facility) => <li>{facility}</li>)}
+      </ul>
+    </div>
+  </div>
+</Layout>

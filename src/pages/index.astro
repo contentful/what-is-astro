@@ -3,51 +3,18 @@ import TalkGrid from "../components/TalkGrid.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Fake Astro Conf</span></h1>
-    <p class="instructions">
-      It's not a real conference, but <strong
-        >look at all the awesome talks</strong
-      >. 👇
-      <br />
-    </p>
+<Layout title="Welcome to Fake Astro Conf">
+  <p class="instructions">
+    It's not a real conference, but <strong
+      >look at all the awesome talks</strong
+    >. 👇
+    <br />
+  </p>
 
-    <TalkGrid />
-  </main>
+  <TalkGrid />
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin: 0;
-  }
-
-  @keyframes gradientMove {
-    0% {
-      background-position: 0%;
-    }
-    100% {
-      background-position: 40%;
-    }
-  }
-
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-    display: block;
-    animation: gradientMove 2.5s linear infinite alternate;
-  }
   .instructions {
     line-height: 1.6;
     margin: 1rem 0;
