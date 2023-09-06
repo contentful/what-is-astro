@@ -1,4 +1,6 @@
-# Astro Starter Kit: Basics
+# What is Astro? An overview
+
+Companion repository for the guide "[What is Astro](https://www.contentful.com/blog/what-is-astro/)" on the Contentful blog.
 
 Created with `npm create astro@latest -- --template basics`
 
